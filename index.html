@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        window.__diagnostics_errors = [];
+        window.onerror = function (msg, url, line, col, err) {
+            window.__diagnostics_errors.push({ msg, url, line, col, error: err ? err.stack : null });
+        };
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Night Café</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+
+<body>
+    <!--================ HEADER ================-->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <!-- Logo -->
+
+            <a href="#hero" class="logo">
+
+                <i class="fa-solid fa-Night"></i>
+
+                <h2>
+
+                    <span class="white-text"></span>
+
+                    <span class="Night-text">Night</span>
+
+                    <span class="white-text">Café</span>
+
+                </h2>
+
+            </a>
+
+            <!-- Navigation -->
+
+            <ul class="nav-links">
+
+                <li><a href="#hero">Home</a></li>
+
+                <li><a href="#menu">Menu</a></li>
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#testimonials">Reviews</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+            <!-- Right Side -->
+
+            <div class="nav-actions">
+
+                <div class="nav-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="text" id="searchInput" placeholder="Search your midnight craving...">
+
+                </div>
+
+            </div>
+
+            <!-- Mobile Menu -->
+
+            <button class="menu-btn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </nav>
+
+    </header>
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero" id="hero">
+
+        <!-- Decorative Images -->
+
+        <div class="Night-glow"></div>
+
+        <img src="images/hero/moon.png" alt="" class="Night">
+
+        <!-- Clouds -->
+
+        <img src="images/hero/cloud.png" class="cloud cloud-back" alt="">
+        <img src="images/hero/cloud.png" class="cloud cloud-back2" alt="">
+
+        <img src="images/hero/cloud.png" class="cloud cloud-left" alt="">
+        <img src="images/hero/cloud.png" class="cloud cloud-right" alt="">
+
+        <img src="images/hero/cloud.png" class="cloud cloud-bottom-left" alt="">
+        <img src="images/hero/cloud.png" class="cloud cloud-bottom-right" alt="">
+
+        <img src="images/hero/coffee.png" alt="" class="coffee">
+
+        <img src="images/hero/beans.png" alt="" class="bean bean-1">
+        <img src="images/hero/beans.png" alt="" class="bean bean-2">
+        <img src="images/hero/beans.png" alt="" class="bean bean-3">
+
+        <!-- Hero Content -->
+
+        <div class="stars">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+
+        </div>
+
+        <div class="shooting-star star1"></div>
+        <div class="shooting-star star2"></div>
+        <div class="shooting-star star3"></div>
+        <div class="hero-content">
+
+            <p class="hero-subtitle">
+                Welcome to NightNight Café
+            </p>
+
+            <h1>
+                Sip Under The
+                <span>Nightlight</span>
+            </h1>
+
+            <p class="hero-description">
+                Discover handcrafted coffee, dreamy desserts,
+                and unforgettable midnight vibes.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#menu" class="btn primary-btn">
+                    Explore Menu
+                </a>
+
+                <a href="#about" class="btn secondary-btn">
+                    Our Story
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- ================= MENU FILTER ================= -->
+
+    <!--================ MENU GRID ================-->
+
+    <section class="menu-grid" id="menu">
+        <!-- Decorative Background -->
+
+        <img src="images/hero/cloud.png" class="grid-cloud gc1">
+        <img src="images/hero/cloud.png" class="grid-cloud gc2">
+        <img src="images/hero/cloud.png" class="grid-cloud gc3">
+        <img src="images/hero/cloud.png" class="grid-cloud gc4">
+
+        <img src="images/hero/coffee.png" class="grid-coffee coffee-left">
+        <img src="images/hero/coffee.png" class="grid-coffee coffee-right">
+
+        <img src="images/hero/beans.png" class="grid-bean bean1">
+        <img src="images/hero/beans.png" class="grid-bean bean2">
+        <img src="images/hero/beans.png" class="grid-bean bean3">
+        <img src="images/hero/beans.png" class="grid-bean bean4">
+        <img src="images/hero/beans.png" class="grid-bean bean5">
+        <img src="images/hero/beans.png" class="grid-bean bean6">
+
+        <div class="grid-stars">
+
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+
+        </div>
+
+
+        <!--================ SECTION HEADING ================-->
+
+        <div class="section-heading">
+
+            <p class="section-subtitle">
+                ࣪ ִֶָ☾. Night ☆
+            </p>
+
+            <h2 class="section-title">
+                ✦ Browse Our Menu ✦
+            </h2>
+
+            <div class="heading-line"></div>
+
+            <h4 class="section-description">
+                Discover handcrafted coffee, dreamy desserts, midnight specials and signature café delights made with
+                love.
+            </h4>
+
+        </div>
+
+        <!--================ MENU CONTROLS ================-->
+        <!--================ PREMIUM MENU CONTROLS ================-->
+
+        <div class="menu-controls">
+
+            <div class="menu-controls-glow"></div>
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" id="menuSearch"
+                    placeholder="Search your favourite coffee, pizza, pasta or dessert...">
+
+            </div>
+
+            <div class="category-row">
+
+                <button class="glass-pill" data-filter="coffee">☕ Coffee</button>
+
+                <button class="glass-pill" data-filter="pizza">🍕 Pizza</button>
+
+                <button class="glass-pill" data-filter="pasta">🍝 Pasta</button>
+
+                <button class="glass-pill" data-filter="sandwich">🥪 Sandwich</button>
+
+                <button class="glass-pill" data-filter="dessert">🍰 Dessert</button>
+
+                <button class="glass-pill" data-filter="snacks">🍟 Snacks</button>
+
+            </div>
+
+            <div class="price-row">
+
+                <button class="glass-pill" data-price="199">₹ Under 199</button>
+
+                <button class="glass-pill" data-price="299">₹ 200 - 299</button>
+
+                <button class="glass-pill" data-price="999">₹ 300+</button>
+
+            </div>
+
+            <div class="type-row">
+
+                <button class="glass-pill" data-type="veg">🟢 Veg</button>
+
+                <button class="glass-pill" data-type="nonveg">🔴 Non Veg</button>
+
+                <button class="glass-pill" data-spice="mild">🌶 Mild</button>
+
+                <button class="glass-pill" data-spice="spicy">🔥 Spicy</button>
+
+            </div>
+
+            <div class="menu-bottom">
+
+                <button class="clear-filter">
+
+                    <i class="fa-solid fa-rotate-left"></i>
+
+                    Clear Filters
+
+                </button>
+
+                <div class="items-badge">
+
+                    Showing <span id="itemCount">12</span> Items
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-grid-glow"></div>
+
+        <div class="cards">
+
+            <!-- CARD 1 -->
+
+            <div class="menu-card" data-category="coffee" data-price="199" data-type="veg" data-spice="mild">
+
+                <div class="card-image">
+                    <img src="images/menu/cappuccino.jpg" alt="Cappuccino">
+                </div>
+
+                <div class="card-body">
+
+                    <div class="card-top">
+
+                        <h3>Cappuccino</h3>
+
+                        <span class="price">₹199</span>
+
+                    </div>
+
+                    <div class="rating">
+                        ★★★★★
+                    </div>
+
+                    <div class="tags">
+                        <span>Coffee</span>
+                        <span>Veg</span>
+                        <span>Mild</span>
+                    </div>
+
+                    <button class="order-btn">
+                        Order Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="menu-card" data-category="coffee" data-price="229" data-type="veg" data-spice="mild">
+
+                <div class="card-image">
+                    <img src="images/menu/latte coffee.jpg" alt="Latte">
+                </div>
+
+                <div class="card-body">
+
+                    <div class="card-top">
+
+                        <h3>Latte</h3>
+
+                        <span class="price">₹229</span>
+
+                    </div>
+
+                    <div class="rating">
+                        ★★★★★
+                    </div>
+
+                    <div class="tags">
+                        <span>Coffee</span>
+                        <span>Veg</span>
+                        <span>Creamy</span>
+                    </div>
+
+                    <button class="order-btn">
+                        Order Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="menu-card" data-category="coffee" data-price="249" data-type="veg" data-spice="mild">
+
+                <div class="card-image">
+                    <img src="images/menu/coffee.jpg" alt="Signature Coffee">
+                </div>
+
+                <div class="card-body">
+
+                    <div class="card-top">
+
+                        <h3>Signature Coffee</h3>
+
+                        <span class="price">₹249</span>
+
+                    </div>
+
+                    <div class="rating">
+                        ★★★★★
+                    </div>
+
+                    <div class="tags">
+                        <span>Coffee</span>
+                        <span>Hot</span>
+                        <span>Classic</span>
+                    </div>
+
+                    <button class="order-btn">
+                        Order Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 4 -->
+
+            <div class="menu-card" data-category="coffee" data-price="299" data-type="veg" data-spice="mild">
+                <div class="card-image">
+                    <img src="images/menu/Hot Chocolate.jpg" alt="Hot Chocolate">
+                </div>
+
+                <div class="card-body">
+
+                    <div class="card-top">
+
+                        <h3>Hot Chocolate</h3>
+
+                        <span class="price">₹299</span>
+
+                    </div>
+
+                    <div class="rating">
+                        ★★★★★
+                    </div>
+
+                    <div class="tags">
+                        <span>Drink</span>
+                        <span>Sweet</span>
+                        <span>Hot</span>
+                    </div>
+
+                    <button class="order-btn">
+                        Order Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 5 -->
+
+            <div class="menu-card" data-category="pizza" data-price="349" data-type="nonveg" data-spice="spicy">
+
+                <div class="card-image">
+                    <img src="images/menu/BBQ Chicken Pizza.jpg" alt="BBQ Chicken Pizza">
+                </div>
+
+                <div class="card-body">
+
+                    <div class="card-top">
+
+                        <h3>BBQ Chicken Pizza</h3>
+
+                        <span class="price">₹349</span>
+
+                    </div>
+
+                    <div class="rating">
+                        ★★★★★
+                    </div>
+
+                    <div class="tags">
+                        <span>Pizza</span>
+                        <span>Non Veg</span>
+                        <span>Spicy</span>
+                    </div>
+
+                    <button class="order-btn">
+                        Order Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 6 -->
+
+            <div class="menu-card" data-category="pizza" data-price="289" data-type="veg" data-spice="mild">
+
+                <div class="card-image">
+                    <img src="images/menu/Margherita Pizza.jpg" alt="Margherita Pizza">
+                </div>
+
+                <div class="card-body">
+
+                    <div class="card-top">
+
+                        <h3>Margherita Pizza</h3>
+
+                        <span class="price">₹289</span>
+
+                    </div>
+
+                    <div class="rating">
+                        ★★★★★
+                    </div>
+
+                    <div class="tags">
+                        <span>Pizza</span>
+                        <span>Veg</span>
+                        <span>Cheesy</span>
+                    </div>
+
+                    <button class="order-btn">
+                        Order Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 7 -->
+
+            <div class="menu-card" data-category="pasta" data-price="323" data-type="veg" data-spice="mild">
+
+                <div class="card-image">
+                    <img src="images/menu/Creamy Alfredo Pasta.jpg" alt="Creamy Alfredo Pasta">
+                </div>
+
+                <div class="card-body">
+
+                    <div class="card-top">
+                        <h3>Creamy Alfredo Pasta</h3>
+                        <span class="price">₹323</span>
+                    </div>
+
+                    <div class="rating">★★★★★</div>
+
+                    <div class="tags">
+                        <span>Pasta</span>
+                        <span>Veg</span>
+                        <span>Creamy</span>
+                    </div>
+
+                    <button class="order-btn">
+                        Order Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 8 -->
+            <div class="menu-card" data-category="pasta" data-price="319" data-type="nonveg" data-spice="spicy">
+
+                <div class="card-image">
+                    <img src="images/menu/Spicy Chicken Pasta.jpg" alt="Spicy Chicken Pasta">
+                </div>
+
+                <div class="card-body">
+
+                    <div class="card-top">
+                        <h3>Spicy Chicken Pasta</h3>
+                        <span class="price">₹319</span>
+                    </div>
+
+                    <div class="rating">★★★★★</div>
+
+                    <div class="tags">
+                        <span>Pasta</span>
+                        <span>Non Veg</span>
+                        <span>Spicy</span>
+                    </div>
+
+                    <button class="order-btn">
+                        Order Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 9 -->
+
+            <div class="menu-card" data-category="snacks" data-price="179" data-type="veg" data-spice="mild">
+
+                <div class="card-image">
+                    <img src="images/menu/Loaded French Fries.jpg" alt="Loaded French Fries">
+                </div>
+
+                <div class="card-body">
+
+                    <div class="card-top">
+                        <h3>Loaded French Fries</h3>
+                        <span class="price">₹179</span>
+                    </div>
+
+                    <div class="rating">★★★★★</div>
+
+                    <div class="tags">
+                        <span>Snacks</span>
+                        <span>Veg</span>
+                        <span>Crispy</span>
+                    </div>
+
+                    <button class="order-btn">
+                        Order Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 10 -->
+
+            <div class="menu-card" data-category="sandwich" data-price="169" data-type="veg" data-spice="mild">
+
+                <div class="card-image">
+                    <img src="images/menu/veg sandwich.jpg" alt="Veg Sandwich">
+                </div>
+
+                <div class="card-body">
+
+                    <div class="card-top">
+                        <h3>Veg Sandwich</h3>
+                        <span class="price">₹169</span>
+                    </div>
+
+                    <div class="rating">★★★★★</div>
+
+                    <div class="tags">
+                        <span>Sandwich</span>
+                        <span>Veg</span>
+                        <span>Fresh</span>
+                    </div>
+
+                    <button class="order-btn">
+                        Order Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 11 -->
+
+            <div class="menu-card" data-category="sandwich" data-price="209" data-type="nonveg" data-spice="mild">
+
+                <div class="card-image">
+                    <img src="images/menu/chiekn sandwich.jpg" alt="Chicken Sandwich">
+                </div>
+
+                <div class="card-body">
+
+                    <div class="card-top">
+                        <h3>Chicken Sandwich</h3>
+                        <span class="price">₹209</span>
+                    </div>
+
+                    <div class="rating">★★★★★</div>
+
+                    <div class="tags">
+                        <span>Sandwich</span>
+                        <span>Non Veg</span>
+                        <span>Grilled</span>
+                    </div>
+
+                    <button class="order-btn">
+                        Order Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 12 -->
+
+            <div class="menu-card" data-category="dessert" data-price="249" data-type="veg" data-spice="mild">
+
+                <div class="card-image">
+                    <img src="images/menu/berry Cheesecake.jpg" alt="berry Cheesecake">
+                </div>
+
+                <div class="card-body">
+
+                    <div class="card-top">
+                        <h3>berry Cheesecake</h3>
+                        <span class="price">₹249</span>
+                    </div>
+
+                    <div class="rating">★★★★★</div>
+
+                    <div class="tags">
+                        <span>Dessert</span>
+                        <span>Sweet</span>
+                        <span>Premium</span>
+                    </div>
+
+                    <button class="order-btn">
+                        Order Now
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ================= ABOUT SECTION ================= -->
+    <!-- ================= ABOUT SECTION ================= -->
+
+    <section class="about-section" id="about">
+
+        <div class="about-bg-glow"></div>
+
+        <!-- Clouds -->
+
+        <img src="images/hero/cloud.png" class="about-cloud cloud1">
+        <img src="images/hero/cloud.png" class="about-cloud cloud2">
+        <img src="images/hero/cloud.png" class="about-cloud cloud3">
+
+        <!-- Beans -->
+
+        <img src="images/hero/beans.png" class="about-bean bean1">
+        <img src="images/hero/beans.png" class="about-bean bean2">
+        <img src="images/hero/beans.png" class="about-bean bean3">
+        <img src="images/hero/beans.png" class="about-bean bean4">
+
+        <!-- Stars -->
+
+        <div class="about-stars">
+
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+
+        </div>
+
+        <!-- Heading -->
+
+        <div class="section-heading">
+
+            <p class="section-subtitle"> ࣪ ִֶָ☾. Night ☆</p>
+
+            <h2 class="section-title">✦ Our Story ✦</h2>
+
+            <div class="heading-line"></div>
+
+            <h4 class="section-description">
+                Every cup tells a story, every night creates a memory.
+            </h4>
+
+        </div>
+
+        <!-- FIRST ROW -->
+
+        <div class="about-top">
+
+            <!-- LEFT -->
+
+            <div class="about-left">
+
+                <div class="coffee-circle">
+
+                    <div class="coffee-glow"></div>
+
+                    <i class="fa-solid fa-mug-hot"></i>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="about-right">
+
+                <h5>WELCOME TO</h5>
+
+                <h2> Night </h2>
+
+                <p>
+
+                    Night is where handcrafted coffee meets dreamy
+                    midnight vibes. From rich espresso and creamy lattes
+                    to delicious desserts and gourmet meals, every item
+                    is prepared with love. Whether you're catching up with
+                    friends, working late or simply enjoying a peaceful
+                    evening, we promise an unforgettable experience
+                    under the Nightlight.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- SECOND ROW -->
+
+        <div class="about-stats">
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-mug-hot"></i>
+
+                <h3>10K+</h3>
+
+                <span>Cups Served</span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-star"></i>
+
+                <h3>4.9</h3>
+
+                <span>Google Rating</span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h3>5K+</h3>
+
+                <span>Happy Customers</span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-award"></i>
+
+                <h3>Since</h3>
+
+                <span>2018</span>
+
+            </div>
+
+        </div>
+
+
+    </section>
+    <!--================ TESTIMONIALS =================-->
+    <section class="tm-section" id="testimonials">
+
+        <div class="tm-glow"></div>
+
+        <!-- Decorations -->
+        <img src="images/hero/cloud.png" class="tm-cloud tm-cloud-1">
+        <img src="images/hero/cloud.png" class="tm-cloud tm-cloud-2">
+
+        <img src="images/hero/beans.png" class="tm-bean tm-bean-1">
+        <img src="images/hero/beans.png" class="tm-bean tm-bean-2">
+
+        <div class="tm-stars">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="section-heading">
+            <p class="section-subtitle">࣪ ִֶָ☾. Night ☆</p>
+
+            <h2 class="section-title">✦ What Our Guests Say ✦</h2>
+
+            <div class="heading-line"></div>
+
+            <h4 class="section-description">Our guests are the heart of every unforgettable night.</h4>
+        </div>
+
+        <div class="tm-wrapper">
+
+            <div class="tm-card">
+                <div class="tm-rating">★★★★</div>
+
+                <p>
+                    The ambience feels magical. Every coffee tastes amazing and the
+                    desserts are unforgettable.
+                </p>
+
+                <div class="tm-user">
+                    <div class="tm-avatar">A</div>
+
+                    <div>
+                        <h3>Alex Morgan</h3>
+                        <span>Coffee Lover</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tm-card featured">
+
+                <div class="tm-rating">★★★★★</div>
+
+                <p>
+                    The best late-night I've visited. Peaceful atmosphere,
+                    premium food and wonderful service.
+                </p>
+
+                <div class="tm-user">
+
+                    <div class="tm-avatar">S</div>
+
+                    <div>
+                        <h3>Sophia Lee</h3>
+                        <span>Food Blogger</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tm-card">
+
+                <div class="tm-rating">★★★★</div>
+
+                <p>
+                    Beautiful lighting, cozy environment and fantastic drinks.
+                    Definitely coming back again.
+                </p>
+
+                <div class="tm-user">
+
+                    <div class="tm-avatar">J</div>
+
+                    <div>
+
+                        <h3>James Wilson</h3>
+
+                        <span>Regular Customer</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!--================ FOOTER ================-->
+
+    <footer class="footer" id="contact">
+
+        <div class="footer-glow"></div>
+
+        <h2>
+
+            <i class="fa-solid fa-Night"></i>
+
+            Night
+
+        </h2>
+
+        <p>
+
+            Crafting unforgettable nights,
+            one cup at a time.
+
+        </p>
+
+        <div class="footer-socials">
+
+            <a href="#"><i class="fab fa-instagram"></i></a>
+
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+            <a href="#"><i class="fab fa-youtube"></i></a>
+
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="#hero">Home</a>
+
+            <a href="#menu">Menu</a>
+
+            <a href="#about">About</a>
+
+            <a href="#testimonials">Reviews</a>
+
+        </div>
+        <div class="footer-contact">
+
+            <a href="tel:+919876543210">
+
+                <i class="fa-solid fa-phone"></i>
+
+                99999999
+
+            </a>
+
+            <a href="mailto:rzeesu@gmail.com">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                rzeesu@gmail.com
+
+            </a>
+
+        </div>
+
+        <div class="footer-copy">
+
+            © 2026 Night • Made with ☕ & 🌙
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const cards = document.querySelectorAll('.menu-card');
+                const logs = {
+                    url: window.location.href,
+                    cardCount: cards.length,
+                    errors: [],
+                    cards: []
+                };
+
+                if (window.__diagnostics_errors) {
+                    logs.errors = window.__diagnostics_errors;
+                }
+
+                cards.forEach((card, idx) => {
+                    const style = window.getComputedStyle(card);
+                    logs.cards.push({
+                        idx: idx + 1,
+                        display: style.display,
+                        opacity: style.opacity,
+                        visibility: style.visibility,
+                        height: card.offsetHeight,
+                        width: card.offsetWidth
+                    });
+                });
+
+                fetch('http://localhost:8081/log-diagnostics', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(logs)
+                }).catch(err => console.error('Fetch error:', err));
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>
