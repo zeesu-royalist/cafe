@@ -2,7 +2,9 @@
    LENIS + GSAP
 ========================================== */
 
-
+if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 /* ==========================================
    MOBILE MENU
@@ -77,15 +79,14 @@ window.addEventListener("scroll", () => {
 const navbarSearch = document.getElementById("searchInput");
 const menuSearch = document.getElementById("menuSearch");
 
-const menuCards = document.querySelectorAll(".menu-card");
-
 /* Search Function */
 
 function searchMenu(searchText) {
 
     const keyword = searchText.toLowerCase().trim();
+    const cards = document.querySelectorAll(".menu-card");
 
-    menuCards.forEach(card => {
+    cards.forEach(card => {
 
         const title =
             card.querySelector("h3").textContent.toLowerCase();
@@ -99,26 +100,18 @@ function searchMenu(searchText) {
         const tags =
             card.textContent.toLowerCase();
 
-        if (
-
-            title.includes(keyword) ||
-
+        const match = title.includes(keyword) ||
             category.includes(keyword) ||
-
             type.includes(keyword) ||
+            tags.includes(keyword);
 
-            tags.includes(keyword)
-
-        ) {
-
-            card.style.display = "block";
-
-        }
-
-        else {
-
+        if (match) {
+            card.style.display = "";
+            card.style.opacity = "1";
+            card.style.visibility = "visible";
+            card.style.transform = "none";
+        } else {
             card.style.display = "none";
-
         }
 
     });
@@ -131,7 +124,7 @@ function searchMenu(searchText) {
 if (navbarSearch) {
 
     navbarSearch.addEventListener("input", (e) => {
-
+        if (menuSearch) menuSearch.value = e.target.value;
         applyFilters();
 
     });
@@ -144,7 +137,7 @@ if (navbarSearch) {
 if (menuSearch) {
 
     menuSearch.addEventListener("input", (e) => {
-
+        if (navbarSearch) navbarSearch.value = e.target.value;
         applyFilters();
 
     });
@@ -173,9 +166,12 @@ function applyFilters() {
             (menuSearch && menuSearch.value) ||
             (navbarSearch && navbarSearch.value) ||
             ""
-        ).toLowerCase();
+        ).toLowerCase().trim();
 
-    menuCards.forEach(card => {
+    const cards = document.querySelectorAll(".menu-card");
+    let visibleCount = 0;
+
+    cards.forEach(card => {
 
         const title =
             card.querySelector("h3").textContent.toLowerCase();
@@ -188,13 +184,18 @@ function applyFilters() {
 
         const price = Number(card.dataset.price);
 
+        const cardText = card.textContent.toLowerCase();
+
         let show = true;
 
         /* SEARCH */
 
         if (
             keyword &&
-            !title.includes(keyword)
+            !title.includes(keyword) &&
+            !category.toLowerCase().includes(keyword) &&
+            !type.toLowerCase().includes(keyword) &&
+            !cardText.includes(keyword)
         ) {
             show = false;
         }
@@ -249,9 +250,22 @@ function applyFilters() {
             show = false;
         }
 
-        card.style.display = show ? "block" : "none";
+        if (show) {
+            card.style.display = "";
+            card.style.opacity = "1";
+            card.style.visibility = "visible";
+            card.style.transform = "none";
+            visibleCount++;
+        } else {
+            card.style.display = "none";
+        }
 
     });
+
+    const itemCountEl = document.getElementById("itemCount");
+    if (itemCountEl) {
+        itemCountEl.textContent = visibleCount;
+    }
 
 }
 
@@ -405,45 +419,32 @@ if (clearBtn) {
 ========================================== */
 
 window.addEventListener("load", () => {
+    if (typeof gsap !== "undefined") {
+        gsap.from(".hero-content", {
+            y: 80,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            clearProps: "opacity,transform"
+        });
 
-    gsap.from(".hero-content", {
+        gsap.from(".Night", {
+            y: -80,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power3.out",
+            clearProps: "opacity,transform"
+        });
 
-        y: 80,
-
-        opacity: 0,
-
-        duration: 1.2,
-
-        ease: "power3.out"
-
-    });
-
-    gsap.from(".Night", {
-
-        y: -80,
-
-        opacity: 0,
-
-        duration: 1.5,
-
-        ease: "power3.out"
-
-    });
-
-    gsap.from(".coffee", {
-
-        x: 80,
-
-        opacity: 0,
-
-        duration: 1.5,
-
-        delay: .3,
-
-        ease: "power3.out"
-
-    });
-
+        gsap.from(".coffee", {
+            x: 80,
+            opacity: 0,
+            duration: 1.5,
+            delay: .3,
+            ease: "power3.out",
+            clearProps: "opacity,transform"
+        });
+    }
 });
 
 
@@ -451,80 +452,100 @@ window.addEventListener("load", () => {
    SCROLL REVEAL
 ========================================== */
 
-gsap.utils.toArray("section").forEach(section => {
+if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
 
-    gsap.from(section, {
+    gsap.utils.toArray("section").forEach(section => {
 
-        scrollTrigger: {
-            trigger: section,
-            start: "top 80%"
-        },
+        gsap.from(section, {
 
-        opacity: 0,
+            scrollTrigger: {
+                trigger: section,
+                start: "top 95%",
+                toggleActions: "play none none none"
+            },
 
-        y: 60,
+            opacity: 0,
 
-        duration: 1,
+            y: 40,
 
-        ease: "power3.out"
+            duration: 0.8,
+
+            ease: "power3.out",
+
+            clearProps: "opacity,transform"
+
+        });
 
     });
 
-});
+
+    /* ==========================================
+       CARD STAGGER
+    ========================================== */
+
+    gsap.from(".menu-card", {
+
+        scrollTrigger: {
+
+            trigger: ".menu-grid",
+
+            start: "top 95%",
+
+            toggleActions: "play none none none"
+
+        },
+
+        y: 40,
+
+        opacity: 0,
+
+        duration: 0.6,
+
+        stagger: 0.08,
+
+        ease: "power3.out",
+
+        clearProps: "opacity,transform",
+
+        onComplete: () => {
+            applyFilters();
+        }
+
+    });
 
 
-/* ==========================================
-   CARD STAGGER
-========================================== */
+    /* ==========================================
+       TESTIMONIAL REVEAL
+    ========================================== */
 
-gsap.from(".menu-card", {
+    gsap.from(".tm-card", {
 
-    scrollTrigger: {
+        scrollTrigger: {
 
-        trigger: ".menu-grid",
+            trigger: ".tm-section",
 
-        start: "top 75%"
+            start: "top 95%",
 
-    },
+            toggleActions: "play none none none"
 
-    y: 50,
+        },
 
-    opacity: 0,
+        y: 40,
 
-    duration: .8,
+        opacity: 0,
 
-    stagger: .15,
+        duration: 0.6,
 
-    ease: "power3.out"
+        stagger: 0.1,
 
-});
+        ease: "power3.out",
 
+        clearProps: "opacity,transform"
 
-/* ==========================================
-   TESTIMONIAL REVEAL
-========================================== */
+    });
 
-gsap.from(".tm-card", {
+}
 
-    scrollTrigger: {
-
-        trigger: ".tm-section",
-
-        start: "top 75%"
-
-    },
-
-    y: 50,
-
-    opacity: 0,
-
-    duration: .8,
-
-    stagger: .2,
-
-    ease: "power3.out"
-
-});
 /* ==========================================
    ACTIVE NAVBAR LINK
 ========================================== */
